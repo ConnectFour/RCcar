@@ -55,23 +55,23 @@ void loop()   /**** LOOP: RUNS CONSTANTLY ****/
       Serial.println(joystick[0]);
       ok ++;
     }
-        if (xAxis < 470)
+        if (xAxis < 900)
         {
     digitalWrite(in1, HIGH);
     digitalWrite(in2, LOW);
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
-    motorSpeedA = map(xAxis, 470, 0, 0, 255);
-    motorSpeedB = map(xAxis, 470, 0, 0, 255);
+    motorSpeedA = map(xAxis, 900, 650, 0, 255);
+    //motorSpeedB = map(xAxis, 470, 0, 0, 255);
         }
-    else if (xAxis > 550)
+    else if (xAxis > 900)
         {
     digitalWrite(in1, LOW);
     digitalWrite(in2, HIGH);
     digitalWrite(in3, LOW);
     digitalWrite(in4, HIGH);
-    motorSpeedA = map(xAxis, 550, 1023, 0, 255);
-    motorSpeedB = map(xAxis, 550, 1023, 0, 255);
+    motorSpeedA = 0; //map(xAxis, 550, 1023, 0, 255);
+   // motorSpeedB = 0 //map(xAxis, 550, 1023, 0, 255);
         }
   else{
        motorSpeedA = 0;

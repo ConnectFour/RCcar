@@ -3,13 +3,12 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 
-#define JOYSTICK_X A0
-#define JOYSTICK_Y A1
 
 const byte address[6] = "00002"; // Define the transmit pipe
 
 RF24 radio(7, 8); // Create a Radio
-int joystick[2];  // 2 element array holding Joystick readings
+int trigger_1 = A0;
+int steering = A2;
 
 void setup()   /**** SETUP: RUNS ONCE ****/
 {
@@ -20,14 +19,17 @@ void setup()   /**** SETUP: RUNS ONCE ****/
   radio.stopListening();
 }//--(end setup )-
 
-
 void loop()   /**** LOOP: RUNS CONSTANTLY ****/
 {
-  joystick[0] = analogRead(JOYSTICK_X);
-  joystick[1] = analogRead(JOYSTICK_Y);
-  
-  radio.write( joystick, sizeof(joystick) );
-Serial.println(joystick[0]);
+  trigger_1 = analogRead(trigger_1);
+  radio.write(trigger_1,1);
+
+  steering = analogRead(A2);
+  radio.write(steering,0);
+
+//Serial.println(trigger_1);
+Serial.println(steering);
+
 }//--(end main loop )-
 
 

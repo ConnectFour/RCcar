@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: controller1.ma
-//Last modified: Sun, Feb 23, 2020 07:17:44 PM
+//Last modified: Sat, Mar 07, 2020 09:41:19 AM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,14 +15,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "51BB9891-45AB-AE02-AFBB-319879DE6C09";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -5.1114023976243539 -22.328515363453107 16.946215727586662 ;
-	setAttr ".r" -type "double3" 55.200000000005701 0 -1089.5999999999258 ;
+	setAttr ".t" -type "double3" -6.471509779228203 -20.911109024520371 21.537059033020554 ;
+	setAttr ".r" -type "double3" 45.600000000000264 2.3854160110976384e-15 -1094.399999999998 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9FA1E232-4DE4-1F6F-8C3D-85ADD7B12156";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
 	setAttr ".ncp" 0.05;
-	setAttr ".coi" 24.302477794051846;
+	setAttr ".coi" 26.38497123102357;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2759,7 +2759,7 @@ createNode mesh -n "polySurface1Shape" -p "|polySurface1";
 	setAttr -s 4 ".iog[1].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.31736931204795837 0.71441001072525978 ;
+	setAttr ".pv" -type "double2" 0.53659152984619141 0.25283712148666382 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -2770,7 +2770,16 @@ createNode mesh -n "polySurface1Shape" -p "|polySurface1";
 	setAttr ".bnr" 2;
 	setAttr ".khe" yes;
 	setAttr ".kmb" 2;
-	setAttr ".dr" 1;
+	setAttr -s 11 ".pt";
+	setAttr ".pt[30]" -type "float3" 0 0.71387285 0 ;
+	setAttr ".pt[36]" -type "float3" 0 0.71387285 0 ;
+	setAttr ".pt[45]" -type "float3" 0 0.71387285 0 ;
+	setAttr ".pt[46]" -type "float3" 0 0.71387285 0 ;
+	setAttr ".pt[53]" -type "float3" 0 0.71387285 0 ;
+	setAttr ".pt[54]" -type "float3" 0 0.71387285 0 ;
+	setAttr ".pt[121]" -type "float3" 0 0.72402149 0 ;
+	setAttr ".dr" 2;
+	setAttr ".dsm" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "polySurface3";
 	rename -uid "C8246A22-4112-2AE1-D19A-CFACF39368C9";
